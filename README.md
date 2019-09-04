@@ -1,4 +1,4 @@
-# JMBG is small utility tool for Unique Master Citizen Number from ID cards.
+# JMBG is small utility tool for Unique Master Citizen Number
 
 It works for every ID of the citizens of ex-yu.
 
