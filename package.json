@@ -1,0 +1,20 @@
+{
+  "name": "jmbg",
+  "version": "1.5.1",
+  "description": "JMBG utility tool, JMBG is a unique identification number that was assigned to every citizen of former Yugoslav republics of the SFR Yugoslavia.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JMBG",
+    "ЈМБГ",
+    "ЕМБГ",
+    "serbia",
+    "croatia",
+    "macedonia",
+    "slovenia"
+  ],
+  "author": "Deda",
+  "license": "ISC"
+}
