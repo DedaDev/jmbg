@@ -1,4 +1,4 @@
-#JMBG is small utility tool for Unique Master Citizen Number from ID cards.
+# JMBG is small utility tool for Unique Master Citizen Number from ID cards.
 
 It works for every ID of the citizens of ex-yu.
 
@@ -22,7 +22,7 @@ jmbg.decode('2206978816007')
     }
 }*/
 
-jmbg.generate() // "2005006982505" (generates random valid JMBG)
+jmbg.generate() // '2005006982505' (generates random valid JMBG)
 
-jmbg.controlNumber("200500698250") // 5
+jmbg.controlNumber('200500698250') // 5
 ```
