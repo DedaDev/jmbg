@@ -1,8 +1,11 @@
 # JMBG is small utility tool for Unique Master Citizen Number
 
-It works for every ID of the citizens of ex-yu.
-
+It works for every ID of the citizens of ex-yu:
 Bosnia, Croatia, Serbia, Slovenia, Montenegro, Northern Macedonia
+
+Can be used in Node.js, React, Vue apps etc.
+
+## API
 
 ```js
 const jmbg = require('jmbg');
