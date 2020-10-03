@@ -15,48 +15,46 @@ function getControlNmb(jmbg) {
 }
 
 module.exports = {
-    decode: function(jmbg) {
-      if(this.isValid(jmbg)){
-        const {year, month, day} = getDate(jmbg)
-        const region = regions[s[7]]
-        const pr = String(s[7]) + s[8]
-        const genderNmb = Number(String(s[9]) + s[10] + s[11])
-        const gender = genderNmb < 500 ? 'Male' : 'Female'
-        return {
-          year,
-          month: month + 1,
-          day,
-          region: region.label,
-          place: region.regions[pr],
-          gender
-        }
-      }
-      throw new Error('Invalid JMBG')
-    },
-    isValid: function(jmbg) {
-      if(jmbg.length !== 13) return false
-      if(getControlNmb(jmbg) !== Number(jmbg.charAt(jmbg.length-1))) return false
+  decode: function(jmbg) {
+    if(this.isValid(jmbg)){
       const {year, month, day} = getDate(jmbg)
-      const date = new Date(year, month, day)
-      const now = new Date()
-      return date < now
-    },
-    random: function() {
-      const from = new Date(1950, 0, 1)
-      const to = new Date()
-      const randomDate = new Date(from.getTime() + Math.random() * (to.getTime() - from.getTime()));
-      const year = randomDate.getFullYear()
-      const month = String(randomDate.getMonth() + 1).padStart(2, '0')
-      const day = String(randomDate.getDate()).padStart(2, '0')
-      const rndRegion = Math.floor(Math.random() * 29) + 70 // serbia only
-      const jmbgWHControl = String(day) + month + String(year).substring(1) + rndRegion + String(Math.floor(Math.random() * 999)).padStart(3, '0')
-      const jmbg = jmbgWHControl + getControlNmb(jmbgWHControl)
-      return jmbg
-    },
-    controlNumber: function(jmbg) {
-      if(jmbg.length >= 12 && jmbg.length <= 13) throw new Error('Invalid JMBG')
-      return getControlNmb(jmbg)
+      const region = regions[s[7]]
+      const pr = String(s[7]) + s[8]
+      const genderNmb = Number(String(s[9]) + s[10] + s[11])
+      const gender = genderNmb < 500 ? 'Male' : 'Female'
+      return {
+        year,
+        month: month + 1,
+        day,
+        region: region.label,
+        place: region.regions[pr],
+        gender
+      }
     }
+    throw new Error('Invalid JMBG')
+  },
+  isValid: function(jmbg) {
+    if(jmbg.length !== 13) return false
+    if(getControlNmb(jmbg) !== Number(jmbg.charAt(jmbg.length-1))) return false
+    const {year, month, day} = getDate(jmbg)
+    const date = new Date(year, month, day)
+    const now = new Date()
+    return date < now
+  },
+  random: function() {
+    const from = new Date(1950, 0, 1)
+    const to = new Date()
+    const randomDate = new Date(from.getTime() + Math.random() * (to.getTime() - from.getTime()));
+    const year = randomDate.getFullYear()
+    const month = String(randomDate.getMonth() + 1).padStart(2, '0')
+    const day = String(randomDate.getDate()).padStart(2, '0')
+    const rndRegion = Math.floor(Math.random() * 29) + 70 // serbia only
+    const jmbgWHControl = String(day) + month + String(year).substring(1) + rndRegion + String(Math.floor(Math.random() * 999)).padStart(3, '0')
+    const jmbg = jmbgWHControl + getControlNmb(jmbgWHControl)
+    return jmbg
+  },
+  controlNumber: function(jmbg) {
+    if(jmbg.length >= 12 && jmbg.length <= 13) throw new Error('Invalid JMBG')
+    return getControlNmb(jmbg)
+  }
 }
-
-
