@@ -86,7 +86,7 @@ module.exports = {
    * @returns {number}
    */
   controlNumber: function(jmbg) {
-    if(jmbg.length >= 12 && jmbg.length <= 13) throw new Error('Invalid JMBG')
+    if(jmbg.length < 12) throw new Error('Invalid JMBG')
     return getControlNmb(jmbg)
   }
 }
