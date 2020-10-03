@@ -1,5 +1,5 @@
 const regions = require('./regions.json')
- 
+
 function getDate(jmbg) {
   const s = jmbg.split('').map(e=>Number(e))
   const year = Number((s[4] === 9 ? '1' : '2') + s[4] + s[5] + s[6])
@@ -14,7 +14,24 @@ function getControlNmb(jmbg) {
   return controlModulo > 9 ? 0 : controlModulo
 }
 
+/**
+ * @typedef PersonData
+ * @type {object}
+ * @property {number} year year of birth
+ * @property {number} month month of birth
+ * @property {number} day day of birth
+ * @property {string} region region of birth
+ * @property {string} place place of birth
+ * @property {string} gender
+ */
+
 module.exports = {
+  /**
+   * Decodes the JMBG into birth date, region, place and gender.
+   * @param {string} jmbg JMBG of the individual
+   * @throws Will throw an error if JMBG is invalid.
+   * @returns {PersonData} Object containing parsed data.
+   */
   decode: function(jmbg) {
     if(this.isValid(jmbg)){
       const {year, month, day} = getDate(jmbg)
@@ -33,6 +50,11 @@ module.exports = {
     }
     throw new Error('Invalid JMBG')
   },
+  /**
+   * Checks if JMBG is valid.
+   * @param {string} jmbg JMBG of the individual
+   * @returns {boolean}
+   */
   isValid: function(jmbg) {
     if(jmbg.length !== 13) return false
     if(getControlNmb(jmbg) !== Number(jmbg.charAt(jmbg.length-1))) return false
@@ -41,6 +63,10 @@ module.exports = {
     const now = new Date()
     return date < now
   },
+  /**
+   * Generates a random JMBG.
+   * @returns {string}
+   */
   random: function() {
     const from = new Date(1950, 0, 1)
     const to = new Date()
@@ -53,6 +79,12 @@ module.exports = {
     const jmbg = jmbgWHControl + getControlNmb(jmbgWHControl)
     return jmbg
   },
+  /**
+   * Get the control number for JMBG
+   * @param {string} jmbg JMBG of the individual
+   * @throws Throws an error if JMBG is invalid
+   * @returns {number}
+   */
   controlNumber: function(jmbg) {
     if(jmbg.length >= 12 && jmbg.length <= 13) throw new Error('Invalid JMBG')
     return getControlNmb(jmbg)
