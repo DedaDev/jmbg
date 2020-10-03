@@ -5,7 +5,7 @@ function getDate(jmbg) {
   const year = Number((s[4] === 9 ? '1' : '2') + s[4] + s[5] + s[6])
   const month = Number(String(s[2]) + s[3]) - 1
   const day = Number(String(s[0]) + s[1])
-  return {year, month, day}
+  return {year, month, day, s}
 }
 
 function getControlNmb(jmbg) {
@@ -26,6 +26,7 @@ function getControlNmb(jmbg) {
  */
 
 module.exports = {
+  InvalidJMBGError: new Error('Invalid JMBG'),
   /**
    * Decodes the JMBG into birth date, region, place and gender.
    * @param {string} jmbg JMBG of the individual
@@ -34,7 +35,7 @@ module.exports = {
    */
   decode: function(jmbg) {
     if(this.isValid(jmbg)){
-      const {year, month, day} = getDate(jmbg)
+      const {year, month, day, s} = getDate(jmbg)
       const region = regions[s[7]]
       const pr = String(s[7]) + s[8]
       const genderNmb = Number(String(s[9]) + s[10] + s[11])
@@ -48,7 +49,7 @@ module.exports = {
         gender
       }
     }
-    throw new Error('Invalid JMBG')
+    throw this.InvalidJMBGError
   },
   /**
    * Checks if JMBG is valid.
@@ -56,7 +57,7 @@ module.exports = {
    * @returns {boolean}
    */
   isValid: function(jmbg) {
-    if(jmbg.length !== 13) return false
+    if(!/^\d{13}$/.test(jmbg)) return false
     if(getControlNmb(jmbg) !== Number(jmbg.charAt(jmbg.length-1))) return false
     const {year, month, day} = getDate(jmbg)
     const date = new Date(year, month, day)
@@ -86,7 +87,7 @@ module.exports = {
    * @returns {number}
    */
   controlNumber: function(jmbg) {
-    if(jmbg.length < 12) throw new Error('Invalid JMBG')
+    if(!/^\d{12,13}$/.test(jmbg)) throw this.InvalidJMBGError
     return getControlNmb(jmbg)
   }
 }
