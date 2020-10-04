@@ -17,7 +17,13 @@
   ],
   "author": "Deda",
   "license": "ISC",
-  "git": "https://github.com/DedaDev/jmbg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DedaDev/jmbg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DedaDev/jmbg/issues"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "eslint": "^7.10.0",
