@@ -1,5 +1,4 @@
-const { InvalidJMBGError } = require('.');
-const jmbg = require('.');
+const jmbg = require('./index');
 
 test('checks if jmbg is valid', () => {
 	expect(jmbg.isValid('2206978816007')).toBe(true)
@@ -21,7 +20,7 @@ test('decodes jmbg', () => {
 	function testInvalidJMBG() {
 		jmbg.decode('22069788160')
 	}
-	expect(testInvalidJMBG).toThrowError(InvalidJMBGError)
+	expect(testInvalidJMBG).toThrowError()
 })
 
 test('gets control number', () => {
@@ -30,9 +29,9 @@ test('gets control number', () => {
 	function testInvalidJMBG() {
 		jmbg.controlNumber('20050069825')
 	}
-	expect(testInvalidJMBG).toThrowError(InvalidJMBGError)
+	expect(testInvalidJMBG).toThrowError()
 })
 
 test('gets random valid JMBG', () => {
-	expect(jmbg.isValid(jmbg.random())).toBe(true)
+	expect(jmbg.isValid(jmbg.generateRandom())).toBe(true)
 })

@@ -1,5 +1,7 @@
 const regions = require('./regions.json')
 
+const INVALID_JMBG_ERROR = new Error('Invalid JMBG')
+
 function getDate(jmbg) {
   const s = jmbg.split('').map(e=>Number(e))
   const year = Number((s[4] === 9 ? '1' : '2') + s[4] + s[5] + s[6])
@@ -26,7 +28,6 @@ function getControlNmb(jmbg) {
  */
 
 module.exports = {
-  InvalidJMBGError: new Error('Invalid JMBG'),
   /**
    * Decodes the JMBG into birth date, region, place and gender.
    * @param {string} jmbg JMBG of the individual
@@ -49,7 +50,7 @@ module.exports = {
         gender
       }
     }
-    throw this.InvalidJMBGError
+    throw INVALID_JMBG_ERROR;
   },
   /**
    * Checks if JMBG is valid.
@@ -68,7 +69,7 @@ module.exports = {
    * Generates a random JMBG.
    * @returns {string}
    */
-  random: function() {
+  generateRandom: function() {
     const from = new Date(1950, 0, 1)
     const to = new Date()
     const randomDate = new Date(from.getTime() + Math.random() * (to.getTime() - from.getTime()));
@@ -87,7 +88,7 @@ module.exports = {
    * @returns {number}
    */
   controlNumber: function(jmbg) {
-    if(!/^\d{12,13}$/.test(jmbg)) throw this.InvalidJMBGError
+    if(!/^\d{12,13}$/.test(jmbg)) throw INVALID_JMBG_ERROR
     return getControlNmb(jmbg)
   }
 }
