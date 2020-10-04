@@ -4,8 +4,6 @@ It works for every ID of the citizens of ex-yu:
 
 Bosnia, Croatia, Serbia, Slovenia, Montenegro, Northern Macedonia
 
-Can be used in Node.js, React, Vue apps etc.
-
 ## API
 
 ```js
@@ -25,7 +23,7 @@ jmbg.decode('2206978816007')
 }
 */
 
-jmbg.random() // '2005006982505' (generates random valid JMBG)
+jmbg.generateRandom() // '2005006982505' (generates random valid JMBG)
 
 jmbg.controlNumber('200500698250') // 5
 ```
