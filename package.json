@@ -1,10 +1,11 @@
 {
   "name": "jmbg",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "JMBG utility tool, JMBG is a unique identification number that was assigned to every citizen of former Yugoslav republics of the SFR Yugoslavia.",
-  "main": "index.js",
+  "main": "/src/index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest tests --watch",
+    "build:standalone": "browserify src/standalone.js -t babelify --o lib/bundle.js"
   },
   "keywords": [
     "JMBG",
@@ -25,10 +26,17 @@
     "url": "https://github.com/DedaDev/jmbg/issues"
   },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "@types/jest": "^26.0.14",
+    "babelify": "^10.0.0",
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.4.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
   }
 }
