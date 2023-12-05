@@ -1,4 +1,4 @@
-[
+export const regions = [
     {
         "label" : "Stranci bez državljanstva.",
         "regions" : {
