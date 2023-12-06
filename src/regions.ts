@@ -1,110 +1,51 @@
-export const regions = [
-    {
-        "label" : "Stranci bez državljanstva.",
-        "regions" : {
-            "01" : "BiH",
-            "02" : "Crna Gora",
-            "03" : "Hrvatska",
-            "04" : "Makedonija",
-            "05" : "Slovenija",
-            "07" : "Srbija",
-            "08" : "Vojvodina",
-            "09" : "KiM"
-        }
-    },
-    {
-        "label" : "Bosna i Hercegovina",
-        "regions" : {
-            "10" : "Banja Luka",
-            "11" : "Bihać",
-            "12" : "Doboj",
-            "13" : "Goražde",
-            "14" : "Livno",
-            "15" : "Mostar",
-            "16" : "Prijedor",
-            "17" : "Sarajevo",
-            "18" : "Tuzla",
-            "19" : "Zenica"
-        }
-    },
-    {
-        "label" : "Crna Gora",
-        "regions" : {
-            "21" : "Podgorica",
-            "26" : "Nikšić",
-            "29" : "Pljevlja"
-        }
-    },
-    {
-        "label" : "Hrvatska",
-        "regions" : {
-            "30" : "Osijek, Slavonija region",
-            "31" : "Bjelovar, Virovitica, Koprivnica, Pakrac, Podravina region",
-            "32" : "Varaždin, Međumurje region",
-            "33" : "Zagreb",
-            "34" : "Karlovac",
-            "35" : "Gospić, Lika region",
-            "36" : "Rijeka, Pula, Istra and Primorje region",
-            "37" : "Sisak, Banovina region",
-            "38" : "Split, Zadar, Dubrovnik, Dalmacija region"
-        }
-    },
-    {
-        "label" : "Makedonija",
-        "regions" : {
-            "41" : "Bitola",
-            "42" : "Kumanovo",
-            "43" : "Ohrid",
-            "44" : "Prilep",
-            "45" : "Skopje",
-            "46" : "Strumica",
-            "47" : "Tetovo",
-            "48" : "Veles",
-            "49" : "Štip"
-        }
-    },
-    {
-        "label" : "Slovenija"
-    },
-    {
-        "label" : "Nepoznato"
-    },
-    {
-        "label" : "Centralna Srbija",
-        "regions" : {
-            "71" : "Beograd",
-            "72" : "Šumadija",
-            "73" : "Niš",
-            "74" : "Južna Morava",
-            "75" : "Zaječar",
-            "76" : "Podunavlje",
-            "77" : "Podrinje i Kolubara",
-            "78" : "Kraljevo",
-            "79" : "Užice"
-        }
-    },
-    {
-        "label" : "Vojvodina",
-        "regions" : {
-            "80" : "Novi Sad",
-            "81" : "Sombor",
-            "82" : "Subotica",
-            "85" : "Zrenjanin",
-            "86" : "Pančevo",
-            "87" : "Kikinda",
-            "88" : "Ruma",
-            "89" : "Sremska Mitrovica"
-        }
-    },
-    {
-        "label" : "Kosovo i Metohija",
-        "regions" : {
-            "91" : "Priština",
-            "92" : "Kosovska Mitrovica",
-            "93" : "Peć",
-            "94" : "Đakovica",
-            "95" : "Prizren",
-            "96" : "Kosovsko Pomoravski okrug"
-        }
-    }
-]
+export const regions: Record<number, string> = {
+    // bosnia
+    11: "Banja Luka, Čelinac, Gradiška, Istočni Drvar, Jezero,Kneževo, Kostajnica, Kotor Varoš, Kozarska Dubica, Krupa na Uni, Kupres, Laktaši, Mrkonjić Grad, Novi Grad, Oštra Luka, Petrovac, Prijedor, Prnjavor, Ribnik, Srbac i Šipovo.",
+    12: "Bijeljina, Brod, Derventa, Doboj, Donji Žabar, Lopare, Modriča, Pelagićevo, Petrovo, Stanari, Teslić, Ugljevik, Vukosavlje i Šamac.",
+    13: "Bileća, Berkovići, Bratunac, Čajniče, Foča, Gacko, Han Pijesak, Istočna Ilidža, Istočni Mostar, Istočni Stari grad, Istočno Novo Sarajevo, Kalinovik, Ljubinje, Milići, Nevesinje, Novo Goražde, Osmaci, Pale, Rogatica, Rudo, Srebrenica, Sokolac, Šekovići, Trebinje, Trnovo, Višegrad, Vlasenica i Zvornik.",
+    14: "Brčko Distrikt",
+    15: "Čapljina, Čitluk, Grude, Jablanica, Konjic, Ljubuški, Mostar, Neum, Posušje, Prozor, Ravno, Stolac i Široki Brijeg.",
+    16: "Bihać, Bosanska Krupa, Bosanski Petrovac, Bosansko Grahovo, Bužim, Cazin, Drvar, Glamoč, Ključ, Kupres, Livno, Sanski Most, Tomislavgrad i Velika Kladuša.",
+    17: "Centar Sarajevo, Foča, Goražde, Hadžići, Ilidža, Ilijaš, Novo Sarajevo, Pale, Sarajevo Novi grad, Sarajevo Stari grad, Trnovo i Vogošća",
+    18: "Banovići, Čelić, Doboj-Istok, Domaljevac-Šamac, Gračanica, Gradačac, Kalesija, Kladanj, Lukavac, Odžak, Orašje, Sapna, Srebrenik, Teočak, Tuzla i Živinice",
+    19: "Bugojno, Breza, Busovača, Doboj-Jug, Dobretići, Donji Vakuf, Fojnica, Gornji Vakuf, Jajce, Kakanj, Kiseljak, Kreševo, Maglaj, Novi Travnik, Olovo, Travnik, Tešanj, Usora, Vareš, Visoko, Vitez, Zavidovići, Zenica i Žepče.",
+    // macedonia
+    41 : "Bitola",
+    42 : "Kumanovo",
+    43 : "Ohrid",
+    44 : "Prilep",
+    45 : "Skopje",
+    46 : "Strumica",
+    47 : "Tetovo",
+    48 : "Veles",
+    49 : "Štip",
+    // slovenia
+    50: "Slovenia",
+    // serbia
+    71: "Beograd",
+    72: "Aranđelovac, Batočina, Despotovac, Jagodina, Knić, Kragujevac, Lapovo, Paraćin, Rača, Rekovac, Svilajnac, Topola i Ćuprija.",
+    73: "Aleksinac, Babušnica, Bela Palanka, Blace, Dimitrovgrad, Doljevac, Gadžin Han, Kuršumlija, Merošina, Niš, Niška Banja, Pirot, Prokuplje, Ražanj, Svrljig i Žitorađa.",
+    74: "Bojnik, Bosilegrad, Bujanovac, Crna Trava, Lebane, Leskovac, Medveđa, Preševo, Surdulica, Trgovište, Vladičin Han, Vlasotince i Vranje.",
+    75: "Boljevac, Bor, Kladovo, Knjaževac, Majdanpek, Negotin, Soko Banja i Zaječar.",
+    76: "Golubac, Kučevo, Malo Crniće, Petrovac na Mlavi, Požarevac, Smederevo, Smederevska Palanka, Velika Plana, Veliko Gradište, Žabari i Žagubica.",
+    77: "Bogatić, Koceljeva, Krupanj, Lajkovac, Loznica, Ljig, Ljubovija, Mali Zvornik, Mionica, Osečina, Ub, Valjevo, Vladimirci i Šabac.",
+    78: "Aleksandrovac, Brus, Gornji Milanovac, Kraljevo, Kruševac, Lučani, Novi Pazar, Raška, Sjenica, Trstenik, Tutin, Varvarin, Vrnjačka Banja, Ćićevac i Čačak.",
+    79: "Arilje, Bajina Bašta, Ivanjica, Kosjerić, Nova Varoš, Požega, Priboj, Prijepolje, Užice i Čajetina.",
+    80: "Bač, Bačka Palanka, Bački Petrovac, Beočin, Novi Sad, Sremski Karlovci, Temerin, Titel i Žabalj.",
+    81: "Apatin, Odžaci i Sombor.",
+    82: "Ada, Bačka Topola, Kanjiža, Kula, Mali Iđoš, Senta i Subotica.",
+    83: "Bečej, Srbobran i Vrbas.",
+    84: "Kikinda, Nova Crnja, Novi Kneževac i Čoka.",
+    85: "Novi Bečej, Sečanj, Zrenjanin i Žitište.",
+    86: "Alibunar, Kovačica, Kovin, Opovo i Pančevo.",
+    87: "Bela Crkva, Plandište i Vršac.",
+    88: "Inđija, Irig, Pećinci, Ruma i Stara Pazova.",
+    89: "Sremska Mitrovica i Šid.",
+    91: "Glogovac, Kosovo Polje, Lipljan, Novo Brdo, Obilić, Podujevo i Priština.",
+    92: "Kosovska Mitrovica, Leposavić, Srbica, Vučitrn, Zubin Potok i Zvečan.",
+    93: "Dečani, Istok, Klina i Peć.",
+    94: "Đakovica.",
+    95: "Dragaš, Gora, Mališevo, Opolje, Orahovac, Prizren i Suva Reka.",
+    96: "Kačanik, Uroševac, Štimlje i Štrpce.",
+    97: "Gnjilane, Kosovska Kamenica i Vitina.",
+};
