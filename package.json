@@ -1,6 +1,6 @@
 {
   "name": "jmbg",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "JMBG utility tool, JMBG is a unique identification number that was assigned to every citizen of former Yugoslav republics of the SFR Yugoslavia.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
