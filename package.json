@@ -29,6 +29,7 @@
   "bugs": {
     "url": "https://github.com/DedaDev/jmbg/issues"
   },
+  "files": ["dist"],
   "devDependencies": {
     "@types/jest": "^29.5.10",
     "@typescript-eslint/eslint-plugin": "^6.13.2",

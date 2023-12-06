@@ -4,6 +4,12 @@ JMBG is a tiny utility tool for managing Unique Master Citizen Number for citize
 
 It supports ESM, CommonJS, and it has typescript types included.
 
+## Installation
+
+```
+npm install jmbg
+```
+
 ## Usage
 
 ```ts
@@ -47,5 +53,7 @@ jmbg.generateRandomJMBG()
 ## Contribution
 
 Feel free to contribute!
-Fork the project, make your own branch with a new feature, after it's done create a PR on this repo. 
+
+Fork the project, make your own branch with a new feature, after it's done create a PR on this repo.
+
 For testing, use `npm run test` or `yarn test`.
